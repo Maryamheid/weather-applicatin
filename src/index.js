@@ -16,6 +16,7 @@ function getnewWeather(response) {
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+  forecastHosted();
 }
 
 function formatDate(date) {
@@ -51,7 +52,13 @@ function handleSearchSubmit(event) {
 
   searchCity(searchInput.value);
 }
-function displayForecast() {
+function forecastHosted(city) {
+  let apikeys = "b3f08a8a98956b59954bfd90b602toe4";
+  let apiurls = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikeys}`;
+  axios.get(apiurls).then(displayForecast);
+}
+function displayForecast(response) {
+  console.log(response.data);
   let dayyys = ["Wed", "Sun", "Fri", "Thu", "Sat"];
   let htmlForecast = "";
 
@@ -80,4 +87,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Herat");
-displayForecast();
