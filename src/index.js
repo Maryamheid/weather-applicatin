@@ -51,8 +51,33 @@ function handleSearchSubmit(event) {
 
   searchCity(searchInput.value);
 }
+function displayForecast() {
+  let dayyys = ["Wed", "Sun", "Fri", "Thu", "Sat"];
+  let htmlForecast = "";
+
+  dayyys.forEach(function (day) {
+    htmlForecast =
+      htmlForecast +
+      `
+      <div class="weather-forecast-day">
+        <div class="forcast-weather-roz">${day}</div>
+        <div class="forecast-emoji-weather">🌤️</div>
+        <div class="forecast-weather-temps">
+          <div class="forecast-weather-temp">
+            <strong>15º</strong>
+          </div>
+          <div class="forecast-weather-temp">9º</div>
+        </div>
+      </div>
+    `;
+  });
+
+  let elementForecast = document.querySelector("#forecast-id");
+  elementForecast.innerHTML = htmlForecast;
+}
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Herat");
+displayForecast();

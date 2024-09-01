@@ -97,7 +97,7 @@ main {
   margin-top: 30px;
 }
 
-.forecast-weather-roz {
+.forcast-weather-roz {
   text-align: center;
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
@@ -117,6 +117,6 @@ main {
   justify-content: center;
 }
 
-.forecast-weather-tempe {
+.forecast-weather-temp {
   padding: 0 10px;
 }
