@@ -59,7 +59,7 @@ function forecastHosted(city) {
 }
 function dispalyDayForecast(timestamp) {
   let idontknow = new Date(timestamp * 1000);
-  let idontknowthe = ["Sat", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let idontknowthe = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return idontknowthe[idontknow.getDay()];
 }
 
@@ -69,7 +69,7 @@ function displayForecast(response) {
   let htmlForecast = "";
 
   response.data.daily.forEach(function (day, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
       htmlForecast =
         htmlForecast +
         `
