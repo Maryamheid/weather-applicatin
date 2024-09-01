@@ -108,6 +108,8 @@ main {
 .forecast-emoji-weather {
   font-size: 38px;
   text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 .forecast-weather-temps {
   text-align: center;
